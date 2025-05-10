@@ -22,4 +22,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and push base image
-      run: make github-actions-rebuild
+      run: make rebuild
