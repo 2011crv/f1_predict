@@ -24,3 +24,6 @@ run:
 clean:
 	@echo "🧹 Cleaning up local Docker image: $(FULL_IMAGE)"
 	@docker rmi $(FULL_IMAGE) || true
+
+github-actions-rebuild:
+	docker build --no-cache -t $(FULL_IMAGE) . && docker push $(FULL_IMAGE)
