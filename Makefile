@@ -19,8 +19,4 @@ rebuild:
 run:
 	@echo "🐳 Pulling latest image and launching interactive shell..."
 	@docker pull $(FULL_IMAGE) > /dev/null
-	@docker run -it $(FULL_IMAGE)
-
-clean:
-	@echo "🧹 Cleaning up local Docker image: $(FULL_IMAGE)"
-	@docker rmi $(FULL_IMAGE) || true
+	@docker run --rm-it $(FULL_IMAGE)
